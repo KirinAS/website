@@ -33,19 +33,6 @@ jobs:
       with:
         platforms: linux/amd64,linux/arm64
         
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@v6
-      with:
-        images: faww/kirinas
-        
-    - name: Build and push Docker image
-      id: push
-      uses: docker/build-push-action@v7
-      with:
-        context: .
-        file: Dockerfile
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
-        platforms: linux/amd64,linux/arm64
+    - name: build
+      run: |
+        make
