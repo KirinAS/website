@@ -17,5 +17,5 @@ build:
 	$(DOCKER) buildx build \
 		--platform linux/amd64,linux/arm64 \
 		--push \
-		--tag $(TAG) 
+		--tag $(TAG) \
 		--tag $(REGISTRY)/$(IMAGE):latest .
