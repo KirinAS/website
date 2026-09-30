@@ -19,7 +19,6 @@ jobs:
 
     - name: setup repo
       run: |
-        cp settings.php.sample settings.php
         git submodule init
         git submodule sync
         git submodule update
