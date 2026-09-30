@@ -1,5 +1,5 @@
 <?php
-include_once("common-header.php");
+include_once("header.php");
 ?>
 
 <!-- Begin page content -->
@@ -11,5 +11,5 @@ Kim Soo-hyun as Song Sam Dong
 </div>
 
 <?php
-include_once("common-footer.php");
+include_once("footer.php");
 ?>
