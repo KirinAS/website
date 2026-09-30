@@ -1,5 +1,25 @@
 <?php
-include_once("common-header.php");
+$site = "Kirin Art School";
+$title = "Kirin Art School";
+$domain = "kirinas.com";
+$descriptions = [
+  "Kirin",
+  "Kirin Art",
+  "Kirin Art School",
+  "KirinAS",
+  "Dream High",
+];
+
+$links = [
+  "/" => "Home",
+  "goham" => "Go Hye Mi",
+  "ssd" => "Song Sam Dong",
+  "jin-k" => "Jin Guk/Hyun Shi Hyuk",
+  "ybh" => "Yoon Baek Hee",
+  "IU" => "Kim Pil Sook",
+];
+
+include_once("common/header.php");
 ?>
 
 <!-- Begin page content -->
@@ -48,5 +68,29 @@ foreach ($datas as $label => $data) {
 </div>
 
 <?php
-include_once("common-footer.php");
+$ip = ip2long($_SERVER[$proxy]);
+
+$db_host = $_ENV["DB_HOST"];
+$db_username = $_ENV["DB_USER"];
+$db_password = $_ENV["DB_PASSWORD"];
+$db_name = $_ENV["DB_NAME"];
+
+/*
+$dbconn = pg_connect("host=localhost dbname=publishing user=www password=foo")
+    or die('Could not connect: ' . pg_last_error());
+
+$query = 'SELECT * FROM authors';
+$result = pg_query($dbconn, $query) or die('Query failed: ' . pg_last_error());
+
+pg_free_result($result);
+
+pg_close($dbconn);
+*/
+
+$footers = [
+    "Respective trademarks/copyright belong to KBS, KBS America, KeyEast Entertainment, JYP Entertainment, and CJ Media. This is a fan made site.",
+    "Source code located at <a href=\"https://github.com/KirinAS/kirinas.com\" target=\"_blank\">GitHub</a>",
+];
+
+include_once("common/footer.php");
 ?>
