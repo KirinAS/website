@@ -1,16 +1,22 @@
 <?php
-include_once "settings.php";
-
 $ip = ip2long($_SERVER[$proxy]);
 
-#$db = new mysqli($db_host, $db_username, $db_password, $db_name);
-$db = new SQLite3("/home/waf/kirinas.com/kirinas.sqlite");
+$db_host = $_ENV["DB_HOST"];
+$db_username = $_ENV["DB_USER"];
+$db_password = $_ENV["DB_PASSWORD"];
+$db_name = $_ENV["DB_NAME"];
 
-#$result = $db->query("INSERT INTO `hits` (ip, count) VALUES (" . $ip . ", 1) ON DUPLICATE KEY UPDATE count=count + 1");
-$stmt = $db->prepare("INSERT INTO visits (ip, count) VALUES (:ip, 0) ON CONFLICT(ip) DO UPDATE SET count = count + 1;");
-$stmt->bindParam(":ip", $ip, SQLITE3_INTEGER);
-$result = $stmt->execute();
+/*
+$dbconn = pg_connect("host=localhost dbname=publishing user=www password=foo")
+    or die('Could not connect: ' . pg_last_error());
 
-$stmt->close();
-$db->close();
+$query = 'SELECT * FROM authors';
+$result = pg_query($dbconn, $query) or die('Query failed: ' . pg_last_error());
+
+pg_free_result($result);
+
+pg_close($dbconn);
+*/
+
+include_once("common-footer.php")
 ?>

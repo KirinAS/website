@@ -7,10 +7,9 @@ How to use
 ==========
 
 1. clone repo
-2. copy [`settings.php.sample`](https://github.com/KirinAS/kirinas.com/blob/master/settings.php.sample) to `settings.php`
-3. edit as needed
-4. ...
-5. profit
+1. serve php with your favorite way
+1. ...
+1. profit
 
 License
 =======
