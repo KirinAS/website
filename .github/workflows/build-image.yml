@@ -7,6 +7,8 @@ on:
       - "main"
     paths:
       - 'src/**'
+      - Dockerfile
+      - VERSION
 
 concurrency: "kirinas"
 
