@@ -1,4 +1,4 @@
-FROM faww/waf-base-php:26.42.0
+FROM faww/waf-base-php:26.44.0
 
 COPY src/ /app
 COPY VERSION /app
