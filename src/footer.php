@@ -1,10 +1,10 @@
 <?php
-$ip = ip2long($_SERVER[$proxy]);
+$ip = ip2long($_SERVER["HTTP_X_FORWARDED_FOR"]);
 
-$db_host = $_ENV["DB_HOST"];
-$db_username = $_ENV["DB_USER"];
-$db_password = $_ENV["DB_PASSWORD"];
-$db_name = $_ENV["DB_NAME"];
+$db_host = $_ENV["DB_HOST"] ?? "UNSET";
+$db_username = $_ENV["DB_USER"] ?? "UNSET";
+$db_password = $_ENV["DB_PASSWORD"] ?? "UNSET";
+$db_name = $_ENV["DB_NAME"] ?? "UNSET";
 
 /*
 $dbconn = pg_connect("host=localhost dbname=publishing user=www password=foo")
